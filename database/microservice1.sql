@@ -1,1 +1,1 @@
-SELECT * from products
+SELECT * from commerce1.products
