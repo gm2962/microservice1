@@ -25,7 +25,19 @@ class ProductsResource:
         return conn
 
     @staticmethod
-    def get_by_key(key):
+    def get_products_list(limit, offset):
+        sql="SELECT * FROM commerce1.products ORDER BY product_id LIMIT %s OFFSET %s;" % (limit, offset)
+        print(sql)
+        conn = ProductsResource._get_connection()
+        cur = conn.cursor()
+        res = cur.execute(sql)
+        result = list(cur.fetchall())
+
+        return result
+
+
+    @staticmethod
+    def get_products_by_id(key):
 
         sql = "SELECT * FROM commerce1.products where product_id=%s"
         conn = ProductsResource._get_connection()

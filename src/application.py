@@ -9,25 +9,23 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/products", methods=["GET"])
+def get_products():
+    limit = request.args.get("limit", default=5)
+    offset = request.args.get("offset", default=0)
 
-@app.get("/api/health")
-def get_health():
-    t = str(datetime.now())
-    msg = {
-        "name": "F22-Starter-Microservice",
-        "health": "Good",
-        "at time": t
-    }
+    results = ProductsResource.get_products_list(limit, offset)
+    if results:
+        rsp = Response(json.dumps(results), status=200, content_type="application.json")
+    else:
+        rsp = Response("NOT FOUND", status=404, content_type="text/plain")
 
-    # DFF TODO Explain status codes, content type, ... ...
-    result = Response(json.dumps(msg), status=200, content_type="application/json")
-
-    return result
+    return rsp
 
 
 @app.route("/products/<product_id>", methods=["GET"])
-def get_pro(product_id):
-    result = ProductsResource.get_by_key(product_id)
+def get_product_id(product_id):
+    result = ProductsResource.get_products_by_id(product_id)
 
     if result:
         rsp = Response(json.dumps(result), status=200, content_type="application.json")
