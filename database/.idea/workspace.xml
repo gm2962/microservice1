@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd506349-767e-4c6c-936f-e346f0a14053" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7509307-3028-4b0d-ae3e-d05f4b75b007.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7509307-3028-4b0d-ae3e-d05f4b75b007/storage_v2/_src_/schema/microservice1.4Eqtrg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/microservice1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/../src/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/products.py" beforeDir="false" afterPath="$PROJECT_DIR$/../src/products.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,7 @@
     "RunOnceActivity.OpenDatabaseViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/gregm/Documents/columbia/cloud/microservice1/microservice1/database/tables/products.csv",
+    "last_opened_file_path": "C:/Users/gregm/Documents/columbia/cloud/microservice2/microservice2/database",
     "settings.editor.selected.configurable": "database.query.execution"
   },
   "keyToStringList": {

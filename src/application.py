@@ -1,5 +1,4 @@
-from flask import Flask, Response, request
-from datetime import datetime
+from flask import Flask, Response, request, redirect
 import json
 from products import ProductsResource
 from flask_cors import CORS
@@ -34,6 +33,21 @@ def get_product_id(product_id):
 
     return rsp
 
+@app.route("/create_product", methods=["POST"])
+def create_product():
+    data = request.json
+
+    product_id = data["product_id"]
+    name = data["name"]
+    category = data["category"]
+    price = data["price"]
+    print(f"Creating product {product_id} : {name}")
+    if not ProductsResource.create_product(product_id, name, category, price):
+        Response("Unable to add data", status=201, content_type="text/plain")
+
+    return redirect(f'/products/{product_id}')
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5011)
+    app.run(host="0.0.0.0", port=5012)
 
