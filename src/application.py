@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/")
+def landing():
+    return "Welcome to the first microservice"
+
 @app.route("/products", methods=["GET"])
 def get_products():
     limit = request.args.get("limit", default=5)
