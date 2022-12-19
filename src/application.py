@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route("/")
 def landing():
-    return "Welcome to the first microservice"
+    return json.dumps({"msg": "Connected to microservice1"})
 
 @app.route("/products", methods=["GET"])
 def get_products():
