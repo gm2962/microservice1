@@ -39,8 +39,8 @@ def get_product_id(product_id):
 
 @app.route("/create_product", methods=["POST"])
 def create_product():
-    data = json.loads(request.data)
-    print(json.dumps(data))
+    #data = json.loads(request.data)
+    data = json.loads(list(request.form.to_dict())[0])
     product_id = data["product_id"]
     name = data["name"]
     category = data["category"]
